@@ -120,6 +120,7 @@ class RequestHandler
      */
     public function onExit()
     {
+      /*
         $responseCode = http_response_code();
         if ($responseCode == 301 || $responseCode == 302) {
             foreach (headers_list() as $header) {
@@ -129,6 +130,7 @@ class RequestHandler
                 }
             }
         }
+       */
         $this->rootSpan->setStatus($responseCode, "HTTP status code: $responseCode");
 
         $this->scope->close();
